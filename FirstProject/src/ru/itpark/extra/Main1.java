@@ -1,5 +1,8 @@
 package ru.itpark.extra;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class Main1 {
   public static void main(String[] args) {
     int x;
@@ -10,5 +13,7 @@ public class Main1 {
     } else {
       System.out.println("Нечетное");
     }
+
+    ArrayList
   }
 }
