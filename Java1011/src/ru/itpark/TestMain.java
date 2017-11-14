@@ -2,7 +2,7 @@ package ru.itpark;
 
 public class TestMain {
   public static void main(String[] args) {
-    Drink drink = new Drink();
+    Drink drink = new Soda();
     drink.open();
 
     Soda soda = new Soda();
@@ -26,5 +26,22 @@ public class TestMain {
     for (int i = 0; i < 5; i++) {
       drinkArr[i].open();
     }
+
+    Barman barman = new Barman();
+    barman.serve(juice1);
+    barman.serve(soda);
+
+
+
   }
 }
+
+
+
+
+
+
+
+
+
+

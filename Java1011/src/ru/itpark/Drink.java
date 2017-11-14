@@ -1,9 +1,10 @@
 package ru.itpark;
 
-public class Drink {
-  void open() {
-    System.out.println("Напиток открыт");
-  }
+public abstract class Drink {
+  /**
+   * Метод открывает напиток
+   */
+  abstract void open();
 
   void pour() {
     System.out.println("Буль-буль");
