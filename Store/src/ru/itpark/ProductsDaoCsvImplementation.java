@@ -7,12 +7,11 @@ import java.io.IOException;
 public class ProductsDaoCsvImplementation implements ProductsDAO {
   @Override
   public boolean exist(String productName) throws IOException {
-    BufferedReader br = new BufferedReader(new FileReader("products.txt"));
+    BufferedReader br = new BufferedReader(new FileReader("products.csv"));
     String s;
-
     while ((s = br.readLine()) != null) {
       String[] arr = s.split(", ");
-      if (s.equals(productName)) {
+      if (arr[0].equals(productName)) {
         return true;
       }
     }
@@ -20,7 +19,7 @@ public class ProductsDaoCsvImplementation implements ProductsDAO {
   }
 
   @Override
-  public void addProduct(String productName) {
+  public void addProduct(Product product) {
 
   }
 
