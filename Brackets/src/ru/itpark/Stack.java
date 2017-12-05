@@ -17,13 +17,17 @@ public class Stack {
     }
   }
 
-  String pop() {
+  String pop() throws NoElementsInStackException {
     if (counter > 0) {
       int numToReturn = counter - 1;
       counter--;
       return array[numToReturn];
     } else {
-      return null;
+      throw new NoElementsInStackException("Стек пуст!");
     }
+  }
+
+  int size() {
+    return counter;
   }
 }

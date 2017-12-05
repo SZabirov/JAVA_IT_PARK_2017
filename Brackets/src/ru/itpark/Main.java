@@ -3,39 +3,39 @@ package ru.itpark;
 public class Main {
 
   public static void main(String[] args) {
-    Stack stack = new Stack(10);
-    String str = "(){}{()}";
-    for (int i = 0; i < str.length(); i++) {
-      String s1 = String.valueOf(str.charAt(i));
-      if (s1.equals("(") || s1.equals("{") || s1.equals("[")) {
-        stack.push(s1);
-      } else {
-        String bracketFromStack = stack.pop();
-        if (bracketFromStack.equals("(")){
-          if (s1.equals(")")){
-            //норм
-          } else {
-            //не норм
+    Stack stack = new Stack(100);
+    String str = "((((((((((((({{}()}[])";
+    boolean sequenceIsCorrect = true;
+    try {
+      for (int i = 0; i < str.length(); i++) {
+        String curSymbol = String.valueOf(str.charAt(i));
+        if (curSymbol.equals("(") || curSymbol.equals("{") || curSymbol.equals("[")) {
+          stack.push(curSymbol);
+        } else {
+          String bracketFromStack = stack.pop();
+          if (curSymbol.equals(")")) {
+            if (!bracketFromStack.equals("(")) {
+              sequenceIsCorrect = false;
+            }
           }
-        }
-        if (bracketFromStack.equals("{")){
-          if (s1.equals("}")){
-            //норм
-          } else {
-            //не норм
+          if (curSymbol.equals("}")) {
+            if (!bracketFromStack.equals("{")) {
+              sequenceIsCorrect = false;
+            }
           }
-        }
-        if (bracketFromStack.equals("[")){
-          if (s1.equals("]")){
-            //норм
-          } else {
-            //не норм
+          if (curSymbol.equals("]")) {
+            if (!bracketFromStack.equals("[")) {
+              sequenceIsCorrect = false;
+            }
           }
         }
       }
+    } catch (NoElementsInStackException e) {
+      sequenceIsCorrect = false;
     }
-
-    stack.push("(");
-    System.out.println(stack.pop());
+    if (stack.size() != 0) {
+      sequenceIsCorrect = false;
+    }
+    System.out.println(sequenceIsCorrect);
   }
 }
