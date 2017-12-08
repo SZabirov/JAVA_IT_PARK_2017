@@ -4,16 +4,26 @@ public class Main {
 
   public static void main(String[] args) {
 //    System.out.println(fact(5));
-    printNumbers(5432);
+//    printNumbers(52);
+      printFromNToOne(12);
   }
 
   static void printNumbers (int n) {
-    if (n / 10 > 0) {
+    if (n < 10) {
+      System.out.println(n);
+    } else {
       int lastDigit = n % 10;
-      System.out.println(lastDigit);
       printNumbers(n / 10);
+      System.out.println(lastDigit);
+    }
+  }
+
+  static void printFromNToOne(int n) {
+    if (n == 1) {
+      System.out.println(1);
     } else {
       System.out.println(n);
+      printFromNToOne(n - 1);
     }
   }
 
