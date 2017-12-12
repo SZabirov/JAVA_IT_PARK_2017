@@ -38,4 +38,25 @@ public class Main {
       return n * fact (n - 1);
     }
   }
+
+  static int sumOfDigits (int n) {
+    if (n < 10) {
+      return (n);
+    } else {
+      int lastDigit = n % 10;
+      return sumOfDigits(n / 10) + lastDigit;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 }
