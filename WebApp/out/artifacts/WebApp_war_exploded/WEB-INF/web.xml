@@ -12,4 +12,22 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>nyservlet</servlet-name>
+        <servlet-class>ru.itpark.NewYearForm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>nyservlet</servlet-name>
+        <url-pattern>/newyear</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>congrats</servlet-name>
+        <servlet-class>ru.itpark.CongratsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>congrats</servlet-name>
+        <url-pattern>/congrats</url-pattern>
+    </servlet-mapping>
+
 </web-app>
