@@ -22,8 +22,10 @@ public class Contact {
 
   /**
    *
+   * @param s
+   * @param name
    */
-  public Contact() {
+  public Contact(String s, String name) {
   }
 
   public int getId() {
