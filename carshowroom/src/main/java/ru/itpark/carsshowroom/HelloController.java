@@ -1,6 +1,8 @@
 package ru.itpark.carsshowroom;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,14 +14,14 @@ public class HelloController {
   CarRepository carRepository;
 
   @RequestMapping("/hello")
-  public String hello() {
+  public List<Car> hello() {
     List<Car> list = (List<Car>) carRepository.findAll();
-    return list.toString();
+    return list;
   }
 
-  @RequestMapping("/goodbye")
-  public String anotherMethod() {
-    return "Bye-bye!";
+  @RequestMapping("/goodbye/{name}")
+  public String anotherMethod(@PathVariable String name) {
+    return "Goodbye, " + name;
   }
 
 }
