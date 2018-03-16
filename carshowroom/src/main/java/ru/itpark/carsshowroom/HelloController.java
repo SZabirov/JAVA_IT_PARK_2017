@@ -1,12 +1,10 @@
 package ru.itpark.carsshowroom;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,6 +27,16 @@ public class HelloController {
   @RequestMapping("/goodbye/{name}")
   public String anotherMethod(@PathVariable String name) {
     return "Goodbye, " + name;
+  }
+
+
+  @PostMapping("/newcar")
+  public String addCar(@Param("mark") String mark,
+                       @Param("model") String model) {
+    System.out.println(mark + " " + model);
+
+//    carRepository.save()
+    return "redirect:/";
   }
 
 }
