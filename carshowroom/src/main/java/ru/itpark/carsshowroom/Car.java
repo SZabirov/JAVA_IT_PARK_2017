@@ -12,7 +12,7 @@ public class Car {
   private Long id;
   private String mark;
   private String model;
-  private int price;
+  private Integer price;
   private String color;
 
   public Car() {
@@ -42,11 +42,11 @@ public class Car {
     this.model = model;
   }
 
-  public int getPrice() {
+  public Integer getPrice() {
     return price;
   }
 
-  public void setPrice(int price) {
+  public void setPrice(Integer price) {
     this.price = price;
   }
 
